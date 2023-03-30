@@ -50,10 +50,27 @@ def zad2():
 zad2()
 def zad3():
     stud=['Иванов',  'Студнев', 'Сидоров', 'Петров', 'Ковалёв']
-    lang={'русский':1, 'китайский':2, 'французский':3, 'немецкий':4, 'английский':5}
-    rasp
-    for i in stud:
-        for j in randint(1, 6):
-            rasp = stud[i]
+    lang={1:'русский', 2:'китайский', 3: 'французский', 4:'немецкий', 5: 'английский'}
+    rasp={}
+    kol= set()
+    vsego=set()
+    zn=list()
+    kit=list()
+    for i in range(5):
+        for j in range(randint(1, 5)):
+            kol.add(randint(1, 5))
+        rasp[stud[i]] = kol
+        kol=set()
+    print(rasp)
+    for key in rasp:
+        vsego=vsego.union(rasp[key])
+    for i in vsego:
+        zn.append(lang[i])
+    print('Студенты знают', len(vsego), 'языков:', sorted(zn))
+    for key in rasp:
+        if 2 in rasp[key]:
+            kit.append(key)
+    print('Китайский знают: ', sorted(kit))
+
+
 zad3()
-vb
